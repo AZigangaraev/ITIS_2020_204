@@ -8,11 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-	let checkerboard = CheckerboardView()
-	let piecePlatform = PiecePlatformView()
+	private let checkerboard = CheckerboardView()
+	private let piecePlatform = PiecePlatformView()
 
-	var whitePieceCenter = CGPoint(x: 0, y: 0)
-	var blackPieceCenter = CGPoint(x: 0, y: 0)
+	private var whitePieceCenter = CGPoint(x: 0, y: 0)
+	private var blackPieceCenter = CGPoint(x: 0, y: 0)
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

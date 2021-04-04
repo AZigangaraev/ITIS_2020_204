@@ -18,7 +18,7 @@ class Position {
 }
 
 class CheckerboardView: UIView {
-	var positions: [Position] = []
+	private var positions: [Position] = []
 
 	init() {
 		super.init(frame: CGRect(x: 0, y: 0, width: 320, height: 320))

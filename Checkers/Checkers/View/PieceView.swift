@@ -13,7 +13,7 @@ protocol PieceViewDelegate: AnyObject {
 
 class PieceView: UIView {
 	let color: PieceColor
-	var initialPosition = CGPoint(x: 0, y: 0)
+	private var initialPosition = CGPoint(x: 0, y: 0)
 	
 	weak var delegate: PieceViewDelegate?
 	
