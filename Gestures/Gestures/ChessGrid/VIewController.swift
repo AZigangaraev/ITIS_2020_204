@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 		}
 
 		self.checkerGrid = CheckerGrid(
-			gridDimension: 5,
+			gridDimension: 20,
 			frame: CGRect(origin: .zero, size: CGSize(width: 300, height: 300)))
 
 		if let checkerGrid = self.checkerGrid {
@@ -37,6 +37,15 @@ class ViewController: UIViewController {
 		}
 
 		self.addCheckerPiece()
+        
+        self.checkerGrid?.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            self.checkerGrid!.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.checkerGrid!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.checkerGrid!.widthAnchor.constraint(equalToConstant: 300),
+            self.checkerGrid!.heightAnchor.constraint(equalToConstant: 300)
+        ])
 	}
 
 	func addCheckerPiece() {

@@ -54,8 +54,9 @@ class CheckerGrid: UIView, CheckerGridDelegate {
 					x: x, y: y, width: squareSide, height: squareSide)
 				pieceCenters.append(
 					CGPoint(
-						x: (frame.maxX - squareSide / 2),
-						y: (frame.maxY - squareSide / 2)))
+                        x: (frame.maxX - squareSide / 2) + self.frame.minX,
+                        y: (frame.maxY - squareSide / 2) + self.frame.minY
+                    ))
 				if (row + col) % 2 == 0 {
 					context.fill(frame)
 				}

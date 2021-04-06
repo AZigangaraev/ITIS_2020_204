@@ -17,7 +17,7 @@ class CheckerPiece: UIView {
 
 	init(fillColor: CGColor) {
 		self.fillColor = fillColor
-		super.init(frame: CGRect(x: 200, y: 500, width: 45, height: 45))
+		super.init(frame: CGRect(x: 200, y: 500, width: 20, height: 20))
 		backgroundColor = .clear
 		clipsToBounds = false
 		gestureRecognizers = [
