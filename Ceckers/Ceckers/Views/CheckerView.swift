@@ -43,6 +43,8 @@ class Checker: UIImageView {
 
 	@objc private func handlePan(_ panRecognizer: UIPanGestureRecognizer) {
 		switch panRecognizer.state {
+		case .began:
+			initialPosition = panRecognizer.location(in: superview)
 		case .changed:
 			let translation = panRecognizer.translation(in: superview)
 			center = CGPoint(x: initialPosition.x + translation.x,

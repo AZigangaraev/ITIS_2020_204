@@ -7,6 +7,7 @@
 import UIKit
 
 class CheckerFieldView: UIView {
+
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		setupField()
@@ -16,7 +17,7 @@ class CheckerFieldView: UIView {
 	var rects: [CGRect] = []
 	var rectsFilling: [Bool] = []
 
-	func setupField() {
+	private func setupField() {
 		let bezierPath = UIBezierPath()
 		for level in 0...3 {
 			for position in 0...3 {
@@ -37,9 +38,23 @@ class CheckerFieldView: UIView {
 		layer.fillColor = UIColor.black.cgColor
 		layer.path = cgPath
 		self.layer.addSublayer(layer)
+
+		// грязь какая-то, не понял, как по-другому сделать
+
+		let bezierPathForPlacholder = UIBezierPath()
+		bezierPathForPlacholder.move(to: CGPoint(x: 0, y: 200))
+		bezierPathForPlacholder.addLine(to: CGPoint(x: 200, y: 200))
+		bezierPathForPlacholder.addLine(to: CGPoint(x: 200, y: 295))
+		bezierPathForPlacholder.addLine(to: CGPoint(x: 0, y: 295))
+		bezierPathForPlacholder.close()
+		let cgPathForPlaceholder = bezierPathForPlacholder.cgPath
+		let layerForPlacheloder = CAShapeLayer()
+		layerForPlacheloder.fillColor = UIColor.white.cgColor
+		layerForPlacheloder.path = cgPathForPlaceholder
+		self.layer.addSublayer(layerForPlacheloder)
 	}
 
-	func setupCircles() {
+	private func setupCircles() {
 		
 		for i in 0..<4 {
 			let checker = Checker(frame: CGRect(x: i * 50 + 5, y: 205, width: 40, height: 40))
